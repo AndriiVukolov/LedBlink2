@@ -466,7 +466,11 @@ ProjectManager.HeapSize=0x200
 ProjectManager.KeepUserCode=true
 ProjectManager.LPBAM.generateCode=
 ProjectManager.LastFirmware=true
+<<<<<<< HEAD
 ProjectManager.LibraryCopy=1
+=======
+ProjectManager.LibraryCopy=2
+>>>>>>> blinking_freq_change
 ProjectManager.MainLocation=Core/Src
 ProjectManager.NoMain=false
 ProjectManager.PreviousToolchain=STM32CubeIDE

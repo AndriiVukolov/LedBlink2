@@ -34,34 +34,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := LedBlink
+BUILD_ARTIFACT_NAME := LedBlink2
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-LedBlink.elf \
+LedBlink2.elf \
 
 MAP_FILES += \
-LedBlink.map \
+LedBlink2.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-LedBlink.list \
+LedBlink2.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: LedBlink.elf secondary-outputs
+main-build: LedBlink2.elf secondary-outputs
 
 # Tool invocations
-LedBlink.elf LedBlink.map: $(OBJS) $(USER_OBJS) C:\Users\CS60\STM32CubeIDE\workspace_1.18.1\LedBlink\STM32U585AIIXQ_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "LedBlink.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m33 -T"C:\Users\CS60\STM32CubeIDE\workspace_1.18.1\LedBlink\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="LedBlink.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+LedBlink2.elf LedBlink2.map: $(OBJS) $(USER_OBJS) C:\Users\CS60\STM32CubeIDE\workspace_1.18.1\LedBlink2\STM32U585AIIXQ_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "LedBlink2.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m33 -T"C:\Users\CS60\STM32CubeIDE\workspace_1.18.1\LedBlink2\STM32U585AIIXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="LedBlink2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -70,14 +70,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-LedBlink.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "LedBlink.list"
+LedBlink2.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "LedBlink2.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) LedBlink.elf LedBlink.list LedBlink.map default.size.stdout
+	-$(RM) LedBlink2.elf LedBlink2.list LedBlink2.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

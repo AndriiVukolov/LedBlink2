@@ -136,7 +136,16 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+<<<<<<< HEAD
 
+=======
+	  	  HAL_GPIO_TogglePin(GPIOH, LED_RED_Pin);
+	 	  i = 0;
+	 	  while (i < 2000000)
+	 	  {
+	 		  i++;
+	 	  }
+>>>>>>> blinking_freq_change
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
