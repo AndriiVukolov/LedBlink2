@@ -137,12 +137,12 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  HAL_GPIO_TogglePin(GPIOH, LED_RED_Pin);
-	  i = 0;
-	  while (i < 1000000)
-	  {
-		  i++;
-	  }
+	  	  HAL_GPIO_TogglePin(GPIOH, LED_RED_Pin);
+	 	  i = 0;
+	 	  while (i < 2000000)
+	 	  {
+	 		  i++;
+	 	  }
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
